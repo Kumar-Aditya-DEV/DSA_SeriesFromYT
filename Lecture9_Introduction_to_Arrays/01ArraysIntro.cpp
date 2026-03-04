@@ -57,11 +57,7 @@ int main() {
       cout << fourth[i] << " ";
     }
 
-
-
-
-
-    cout << endl << "Everything is fine " << endl << endl;
+    cout << endl << "Everything is fine " << endl;
 
     return 0;
 }
