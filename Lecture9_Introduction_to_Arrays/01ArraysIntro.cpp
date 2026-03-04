@@ -38,7 +38,7 @@ int main() {
     // initiallising all locations with 0
     int fourth[10] = {0};
 
-    n = 10;
+    int n = 10;
     cout << " Print the array " << endl;
     // print the array
     for(int i = 0; i < n; i++){
@@ -50,7 +50,7 @@ int main() {
     // initiallising all locations with 0
     int fourth[10] = {1};
 
-    n = 10;
+    int n = 10;
     cout << " Print the array " << endl;
     // print the array
     for(int i = 0; i < n; i++){
