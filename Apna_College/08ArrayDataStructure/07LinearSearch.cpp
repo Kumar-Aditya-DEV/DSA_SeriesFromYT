@@ -8,7 +8,7 @@ int linearSearch(int arr[], int siz, int target){
     }
   }
 
-  return -1;
+  return -1;      // means not found
 }
 
 
