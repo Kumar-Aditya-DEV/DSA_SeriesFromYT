@@ -23,3 +23,8 @@ int main(){
   cout << endl;
   return 0;
 } 
+
+
+
+// pass by refrence me array ki main value ko chang kr diya 
+// pass by value me copy banti hai or fir usme reflect hota hai value
