@@ -5,13 +5,13 @@ using namespace std;
 int decToBinary(int decNum) {
     
     int ans = 0;   // final binary number store karega
-    int pow = 1;   // place value (1, 10, 100, ...)
+    int pow = 1;   // place value (1, 10, 100, ...) power ke liyea le rahe hai
 
     // jab tak decimal number 0 nahi hota
     while(decNum > 0) {
         
         int rem = decNum % 2;   // remainder (0 ya 1) → binary digit
-        decNum /= 2;            // number ko 2 se divide kar rahe
+        decNum /= 2;            // number ko 2 se divide kar rahe because quotient bhi to lana hai
 
         ans += (rem * pow);     // remainder ko correct position pe add karna
         pow *= 10;              // next position (10, 100, 1000...)
@@ -24,7 +24,7 @@ int main() {
 
     int decNum = 50;
 
-    // 50 ka binary print karega
+    // 50 ka binary print karega for specific no.
     cout << decToBinary(decNum) << endl;
 
     // 1 se 10 tak sabka binary print karega

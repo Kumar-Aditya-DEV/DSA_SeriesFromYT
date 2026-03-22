@@ -5,7 +5,7 @@ using namespace std;
 int BinaryToDecimal(int binNum) {
 
     int ans = 0;   // final decimal number store karega
-    int pow = 1;   // power of 2 (1, 2, 4, 8, ...)
+    int pow = 1;  // 2 ki power 0  // power of 2 (1, 2, 4, 8, ...)
 
     // jab tak binary number khatam nahi hota
     while(binNum > 0) {
