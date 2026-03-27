@@ -1,17 +1,21 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
 int main(){
 
-  int** ptr;        // isko cout kariyenge to hame garbage address dega 
+  int** ptr;        
+  // ptr ek pointer to pointer hai
+  // lekin abhi isme koi value assign nahi hui
+  // 👉 isme garbage value hogi (random address)
 
+  cout << ptr << endl;  
+  // ⚠️ garbage address print hoga (random number)
 
-  int** ptr = NULL;      // gives zero in output 
-  cout <<  ptr << endl;
+  ptr = NULL;      
+  // ab ptr ko NULL assign kiya (means koi valid address nahi)
 
-  
+  cout << ptr << endl;
+  // 👉 0 print hoga (NULL ka matlab zero address)
 
-         
   return 0;
 }
