@@ -1,38 +1,58 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
 int main(){
+
+  // ---------------- ARRAY + POINTER ----------------
   int arr[] = {1,2,3,4,5};
 
-  cout << *arr << endl;  // 1
-  cout << *(arr + 1) << endl;  // 2
-  cout << *(arr + 2) << endl;  // 3
-  cout << *(arr + 3) << endl;  // 4
-  cout << *(arr + 4) << endl;  // 5
+  cout << *arr << endl;  
+  // *arr → arr[0] → 1
+
+  cout << *(arr + 1) << endl;  
+  // arr + 1 → next element ka address → arr[1]
+  // *(arr + 1) → 2
+
+  cout << *(arr + 2) << endl;  
+  // arr[2] → 3
+
+  cout << *(arr + 3) << endl;  
+  // arr[3] → 4
+
+  cout << *(arr + 4) << endl;  
+  // arr[4] → 5
 
 
 
-  // operation on pointer to pointer
-  // isme hm ek pointer ki value ko dusri pointer ki value ke sath add nii kr sakte bht subtract kr sakte hai (for same data type)
+  // ---------------- POINTER ARITHMETIC ----------------
+  // NOTE: pointer + pointer ❌ allowed nahi hai
+  // but pointer - pointer ✅ allowed hai (same type ke liye)
+
+  int arr2[] = {10,20,30,40};
+  int* ptr2 = arr2;        // arr2[0]
+  int* ptr1 = ptr2 + 2;    // arr2[2]
+
+  cout << ptr1 - ptr2 << endl;   
+  // (ptr1 - ptr2) → number of elements ka difference
+  // 👉 output: 2
 
 
-  int* ptr2; // 100
-  int* ptr1 = ptr2 + 2; // 108
 
-  cout << ptr1 - ptr2 << endl;   // 2
+  // ---------------- POINTER COMPARISON ----------------
+  int* ptr3 = arr2;        // arr2[0]
+  int* ptr4 = arr2 + 3;    // arr2[3]
 
+  cout << ptr3 << endl;    
+  // ptr3 → address of arr2[0]
 
-
-
-  // also we compare 2 pointers 
-  int* ptr3;
-  int* ptr4;
-
-  cout << ptr3 << endl;
-  cout << ptr4 << endl;
+  cout << ptr4 << endl;    
+  // ptr4 → address of arr2[3]
 
   cout << (ptr3 < ptr4) << endl;
+  // compare addresses → ptr3 pehle hai → true (1)
+
   cout << (ptr3 != ptr4) << endl;
+  // dono alag address → true (1)
+
   return 0;
 }
