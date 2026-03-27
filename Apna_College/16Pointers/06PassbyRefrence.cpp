@@ -1,54 +1,76 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-// void changeA(int a){    // pass by value
-//   a = 20;
+// ---------------- PASS BY VALUE ----------------
+// yahan function me variable ki copy jaati hai
+// original value change nahi hoti
+
+// void changeA(int a){    
+//   a = 20;   // sirf copy change hui
 // }
 
 // int main(){
 //     int a = 10;
 
-//     changeA(a);
+//     changeA(a);   // copy pass hui
 
-//     cout << "inside main funcn : " << a << endl;  // 10 aaiega
+//     cout << "inside main funcn : " << a << endl;  
+//     // output: 10 (original unchanged)
+
 //   return 0;
 // }
 
 
 
+// ---------------- PASS BY REFERENCE (POINTER) ----------------
+// yahan address pass hota hai
+// original value change hoti hai
 
-
-// void changeA(int* ptr){    // pass by refrence ke liyea adress pas karo and pass by refrence using 
-//   *ptr = 20;
+// void changeA(int* ptr){    
+//   *ptr = 20;   // original value change
 // }
 
 // int main(){
 //     int a = 10;
 
-//     changeA(&a);
+//     changeA(&a);   // address pass kiya
 
-//     cout << "inside main funcn : " << a << endl;  // 20 aaiega
+//     cout << "inside main funcn : " << a << endl;  
+//     // output: 20
+
 //   return 0;
 // }
 
 
 
+// ---------------- PASS BY REFERENCE (ALIAS / &) ----------------
+// yahan reference (alias) use hota hai
+// ptr aur a same variable ko refer karte hain
 
-void changeA(int &ptr){   // pass by refrence using alias(&) instead of pointers
-  ptr = 20;
+void changeA(int &ptr){   
+  ptr = 20;   // directly original variable change
 }
 
 int main(){
     int a = 10;
 
-    changeA(a);
+    changeA(a);   // direct pass (no & needed)
 
-    cout << "inside main funcn : " << a << endl;  // 20 aaiega
+    cout << "inside main funcn : " << a << endl;  
+    // output: 20
+
   return 0;
 }
 
 
-// pass by refrence me hame apne main function ka address pass kr sakta hu dusre function me uss se ye hoga ki mai koi copy nii bhej raha hu
 
-// in c++ pass by refrence 2 type se hota hai. 1 - pointers se. 2 - refrences(alias se )
+// ---------------- IMPORTANT NOTES ----------------
+
+// pass by value → copy jaati hai → original change nahi hota ❌
+// pass by pointer → address jaata hai → original change hota hai ✅
+// pass by reference (&) → alias banta hai → original change hota hai ✅
+
+// shortcut:
+// value → copy
+// pointer → address
+// reference → same variable ka dusra naam
