@@ -18,7 +18,10 @@ cout << *q << endl;      //// address of &a
 
 // q2
 int arr[] = {10, 20, 30, 40};
-int *ptr = arr;
+
+// ptr = arr ka matlab → ptr = &arr[0]
+// 👉 yani ptr first element (10) ko point kar raha hai
+int *ptr = arr;       
 
 cout <<* (ptr + 1) << endl;    //20
 cout << *(ptr + 3) << endl;   // 40
