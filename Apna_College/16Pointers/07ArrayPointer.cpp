@@ -1,13 +1,19 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
 int main(){
-  // array is our constant pointer -> jinki value change nii ho sakti
+
+  // array is like a constant pointer (address fix hota hai)
   int arr[] = {1,2,3,4,5};
+  // arr internally point karta hai first element ko → &arr[0]
 
-  cout << arr << endl;    // pointer meory ka address milega mere ko vo bhi 0th idex ka memory
+  cout << arr << endl;    
+  // arr → base address deta hai (address of arr[0])
+  // 👉 same as &arr[0]
 
-  cout << *arr << endl;  // 0th index ki value aaiegi 
+  cout << *arr << endl;  
+  // *arr → arr[0] ki value
+  // 👉 output: 1
+
   return 0;
 }
