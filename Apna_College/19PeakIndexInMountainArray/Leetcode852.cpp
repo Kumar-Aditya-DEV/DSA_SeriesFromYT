@@ -18,26 +18,52 @@
 
 
 
-// another binary approach
-class Solution {
-public:
-    int peakIndexInMountainArray(vector<int>& arr) {
-        int st = 1, end = arr.size() - 2;  // edges avoid kiye
+// // another binary approach
+// class Solution {
+// public:
+//     int peakIndexInMountainArray(vector<int>& arr) {
+//         int st = 1, end = arr.size() - 2;  // edges avoid kiye
 
-        while (st <= end) {
-            int mid = st + (end - st) / 2;
+//         while (st <= end) {
+//             int mid = st + (end - st) / 2;
 
-            if (arr[mid - 1] < arr[mid] && arr[mid] > arr[mid + 1]) {
-                return mid;  // peak mil gaya
-            }
-            else if (arr[mid - 1] < arr[mid]) {
-                st = mid + 1;   // increasing side → right jao
-            }
-            else {
-                end = mid - 1;  // decreasing side → left jao
-            }
+//             if (arr[mid - 1] < arr[mid] && arr[mid] > arr[mid + 1]) {
+//                 return mid;  // peak mil gaya
+//             }
+//             else if (arr[mid - 1] < arr[mid]) {
+//                 st = mid + 1;   // increasing side → right jao
+//             }
+//             else {
+//                 end = mid - 1;  // decreasing side → left jao
+//             }
+//         }
+
+//         return -1;
+//     }
+// };
+
+
+
+
+
+
+
+
+
+// binary search o(log n) ->
+int peakIndexInMountainArray(vector<int>& arr) {
+    int st = 0, end = arr.size() - 1;
+
+    while (st < end) {
+        int mid = st + (end - st) / 2;
+
+        if (arr[mid] < arr[mid + 1]) {
+            st = mid + 1;   // right side
+        } else {
+            end = mid;      // left side -> including mid
         }
-
-        return -1;
     }
-};
+
+    return st;  // peak index
+}
+
