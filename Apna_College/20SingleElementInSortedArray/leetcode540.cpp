@@ -12,12 +12,37 @@ public:
         // return nums[n - 1];
 
 
-        // with bit wise operator 
-        int ans = 0;
+
+
+        // // with bit wise operator 
+        // int ans = 0;
         
-        for(int num : nums){
-        ans ^= num;
+        // for(int num : nums){
+        // ans ^= num;
+        // }
+        // return ans;
+
+
+
+        // more optimise and short code
+        int n = nums.size();
+
+        if(n == 1) return nums[0];
+
+        int st = 0, end = n - 1;
+
+        while(st < end){
+            int mid = st + (end - st) / 2;
+
+            // make mid even
+            if(mid % 2 == 1) mid--;
+            if(nums[mid] == nums[mid + 1]){
+                st = mid + 2;
+            } else {
+                end = mid;
+            }
         }
-        return ans;
+        return nums[st];
+
     }
 };
