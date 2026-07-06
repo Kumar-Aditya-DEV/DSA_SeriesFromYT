@@ -9,5 +9,9 @@ int main(){
       cout << i << " ";
     }
   }
+
+  for(int i = 3; i <= n; i += 6){
+    cout << i << " ";       // output -> 3 9 15 21 ..... n
+  }
   return 0;
 }
